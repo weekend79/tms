@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Django Allauth</title>
+
+    <!-- Styling -->
+    <!-- Bootstrap CSS, and Font Awesome-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom styling sheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+			<a class="navbar-brand mx-auto" href="{% url 'index' %}"><img class="rounded-circle col-sm-4 offset-sm-4"
+                src="#" alt="Allauth">
+                <span class="sr-only">(current)</span></a>
+		</nav>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item active text-size-navbar">
+						<a class="nav-link" href="{% url 'index' %}">Home</a>
+					</li>
+					<li class="nav-item text-size-navbar">
+						<a class="nav-link" href="{% url 'about' %}">About</a>
+					</li>
+					<li class="nav-item text-size-navbar">
+						<a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item text-size-navbar">
+						<a class="nav-link" href="#">Contact</a>
+                    </li>
+                    
+				</ul>
+			</div>
+            
+        </nav>
+        
+        {% block content %}
+        
+        {% endblock %}
+</body>
+</html>
